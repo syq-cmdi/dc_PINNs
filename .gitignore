@@ -1,0 +1,45 @@
+# Model weights (can be large)
+*.pth
+*.pt
+
+# NumPy data arrays
+*.npy
+*.npz
+
+# MATLAB data files (download separately)
+*.mat
+
+# Word documents (binary, not diff-friendly)
+*.docx
+
+# Generated figures (reproducible from code)
+figures/*.png
+figures/*.pdf
+code/*.png
+code/*.pdf
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# macOS metadata
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log

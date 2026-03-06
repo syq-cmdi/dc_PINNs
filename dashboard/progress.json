@@ -1,0 +1,64 @@
+{
+  "paper_title": "Physics-Informed Neural Networks for Kuramoto-Sivashinsky Dynamics in Thin Water Film Cooling of Data Centers",
+  "author": "Yuqi Shi",
+  "journal": "International Journal of Heat and Mass Transfer",
+  "deadline": "18 hours from start",
+  "last_updated": "2026-03-05T18:15:00",
+  "overall_progress": 100,
+  "sections": [
+    {"id": 1, "name": "Abstract", "status": "complete", "progress": 100, "words": 220, "target_words": 250},
+    {"id": 2, "name": "1. Introduction", "status": "complete", "progress": 100, "words": 1180, "target_words": 1200},
+    {"id": 3, "name": "2. Physical Model", "status": "complete", "progress": 100, "words": 980, "target_words": 1000},
+    {"id": 4, "name": "3. PINN Methodology", "status": "complete", "progress": 100, "words": 1150, "target_words": 1200},
+    {"id": 5, "name": "4. Results & Validation", "status": "complete", "progress": 100, "words": 1750, "target_words": 1800},
+    {"id": 6, "name": "5. Data Center Application", "status": "complete", "progress": 100, "words": 980, "target_words": 1000},
+    {"id": 7, "name": "6. Discussion", "status": "complete", "progress": 100, "words": 580, "target_words": 600},
+    {"id": 8, "name": "7. Conclusions", "status": "complete", "progress": 100, "words": 380, "target_words": 400}
+  ],
+  "figures": {
+    "total": 16,
+    "completed": 16,
+    "list": [
+      {"id": "Fig1", "caption": "Data center cooling plate schematic", "status": "complete"},
+      {"id": "Fig2", "caption": "Thin film flow (schematic + stability)", "status": "complete"},
+      {"id": "Fig3", "caption": "PINN architecture diagram", "status": "complete"},
+      {"id": "Fig4", "caption": "Training loss + full benchmark (6-panel)", "status": "complete"},
+      {"id": "Fig5", "caption": "Experimental validation (3-panel)", "status": "complete"},
+      {"id": "Fig6", "caption": "Inclination angle parameter study", "status": "complete"},
+      {"id": "Fig7", "caption": "Reynolds number parameter study", "status": "complete"},
+      {"id": "Fig8", "caption": "Data center thermal design map", "status": "complete"},
+      {"id": "Fig9-16", "caption": "Sub-panels in multi-figure composites", "status": "complete"}
+    ]
+  },
+  "references": {
+    "total": 84,
+    "target": 50,
+    "status": "complete",
+    "format": "ENW (EndNote)",
+    "pinn_count": 30,
+    "ks_fluid_count": 30,
+    "dc_cooling_count": 15,
+    "other": 9
+  },
+  "code": {
+    "files": ["ks_pinn_benchmark.py", "generate_paper_figures.py", "build_docx.py"],
+    "lines": 1350,
+    "status": "complete"
+  },
+  "output_files": {
+    "paper_md": "paper/ks_pinn_paper_v2.md",
+    "paper_docx": "paper/ks_pinn_ijhmt_v2.docx",
+    "references_enw": "references/references.enw",
+    "figures_dir": "figures/ (16 files)",
+    "dashboard": "dashboard/index.html",
+    "pinn_code": "code/ks_pinn_benchmark.py"
+  },
+  "validation": {
+    "docx_checks_passed": 10,
+    "docx_checks_failed": 0,
+    "docx_warnings": 0,
+    "figures_validated": "9/9 (v2 revised figures)",
+    "references_validated": "50/50 inline + 84/84 ENW format",
+    "version": "v2 (physics corrected: h_flat=448.5, u_rms=1.205, Nu=1.320, h_wavy=591.9)"
+  }
+}

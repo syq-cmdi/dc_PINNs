@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="15">
+<title>KS-PINN Paper Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --accent: #4e9eff;
+    --green: #22c55e;
+    --yellow: #f59e0b;
+    --red: #ef4444;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --border: #2d3148;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 13px; line-height: 1.6; }
+
+  .header { background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%); border-bottom: 1px solid var(--border); padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 16px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; }
+  .header .meta { color: var(--muted); font-size: 11px; text-align: right; }
+  .refresh-badge { background: var(--green); color: #000; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; margin-left: 10px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; padding: 20px 30px; }
+  .grid-wide { grid-column: 1 / -1; }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .card h2 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 12px; }
+
+  .stat-big { font-size: 48px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  .progress-bar-outer { background: #1e2235; border-radius: 4px; height: 8px; margin: 6px 0; overflow: hidden; }
+  .progress-bar-inner { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+  .bar-green { background: linear-gradient(90deg, #16a34a, #22c55e); }
+  .bar-blue { background: linear-gradient(90deg, #2563eb, #4e9eff); }
+  .bar-yellow { background: linear-gradient(90deg, #d97706, #f59e0b); }
+
+  .section-row { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); gap: 10px; }
+  .section-row:last-child { border-bottom: none; }
+  .section-name { flex: 1; font-size: 12px; }
+  .section-words { color: var(--muted); font-size: 11px; min-width: 90px; text-align: right; }
+  .status-badge { padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; min-width: 70px; text-align: center; }
+  .badge-pending { background: #1e2235; color: var(--muted); }
+  .badge-in-progress { background: #1c3a5e; color: var(--accent); animation: pulse 2s infinite; }
+  .badge-complete { background: #14532d; color: var(--green); }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+  .figure-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .figure-item { background: #1e2235; border-radius: 6px; padding: 8px 10px; font-size: 11px; }
+  .figure-item .fig-id { color: var(--accent); font-weight: 700; font-size: 10px; }
+  .figure-item .fig-caption { color: var(--muted); margin-top: 2px; line-height: 1.3; font-size: 10px; }
+  .fig-complete { border-left: 3px solid var(--green); }
+  .fig-pending { border-left: 3px solid var(--border); }
+
+  .timeline { position: relative; padding-left: 20px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .timeline-item { position: relative; padding: 6px 0 6px 14px; }
+  .timeline-item::before { content: ''; position: absolute; left: -14px; top: 13px; width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .timeline-item.done::before { background: var(--green); }
+  .timeline-item.active::before { background: var(--accent); animation: pulse 1.5s infinite; }
+  .tl-title { font-size: 12px; font-weight: 600; }
+  .tl-time { font-size: 10px; color: var(--muted); }
+
+  .code-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .code-stat { background: #1e2235; border-radius: 6px; padding: 10px; text-align: center; }
+  .code-stat .val { font-size: 24px; font-weight: 700; color: var(--accent); }
+  .code-stat .lbl { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .ref-status { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+  .ref-bar-wrapper { flex: 1; }
+
+  .countdown { font-size: 11px; color: var(--yellow); padding: 4px 0; }
+
+  .footer { border-top: 1px solid var(--border); padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 11px; }
+  .live-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 1.5s infinite; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>KS-PINN Paper Dashboard <span class="refresh-badge">AUTO-REFRESH 15s</span></h1>
+    <div style="color:var(--muted); font-size:11px; margin-top:4px;">Physics-Informed Neural Networks for KS Dynamics in Thin Film Water Cooling of Data Centers</div>
+  </div>
+  <div class="meta">
+    <div>Yuqi Shi · China Mobile CMDI</div>
+    <div>Target: <strong style="color:var(--accent)">IJHMT</strong> · 14–16 pages · 15+ figures</div>
+    <div id="current-time" style="color:var(--yellow)">Loading...</div>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- Overall Progress -->
+  <div class="card">
+    <h2>Overall Progress</h2>
+    <div class="stat-big" id="overall-pct">15%</div>
+    <div class="stat-label">Paper Completion</div>
+    <div class="progress-bar-outer" style="height:12px; margin-top:12px;">
+      <div class="progress-bar-inner bar-blue" id="overall-bar" style="width:15%"></div>
+    </div>
+    <div style="margin-top:16px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Code</span><span style="color:var(--green)">✓ Complete</span></div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Figures (existing)</span><span style="color:var(--green)">9 / 16</span></div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>References</span><span id="ref-count" style="color:var(--yellow)">0 / 50</span></div>
+      <div style="display:flex;justify-content:space-between;"><span>Word Document</span><span id="docx-status" style="color:var(--muted)">Pending</span></div>
+    </div>
+  </div>
+
+  <!-- Sections -->
+  <div class="card" style="grid-column: span 2;">
+    <h2>Paper Sections</h2>
+    <div id="sections-list">
+      <div class="section-row">
+        <div class="section-name">Abstract</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 250 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">1. Introduction</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 1200 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">2. Physical Model</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 1000 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">3. PINN Methodology</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 1200 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">4. Results &amp; Validation</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 1800 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">5. Data Center Application</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 1000 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">6. Discussion</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 600 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+      <div class="section-row">
+        <div class="section-name">7. Conclusions</div>
+        <div class="progress-bar-outer" style="flex:1;margin:0 10px;"><div class="progress-bar-inner bar-green" style="width:0%"></div></div>
+        <div class="section-words">0 / 400 w</div>
+        <div class="status-badge badge-pending">PENDING</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Figures -->
+  <div class="card grid-wide">
+    <h2>Figures (16 total · 9 existing · 7 to generate)</h2>
+    <div class="figure-grid">
+      <div class="figure-item fig-pending"><div class="fig-id">Fig. 1</div><div class="fig-caption">Data center cooling plate schematic</div></div>
+      <div class="figure-item fig-pending"><div class="fig-id">Fig. 2</div><div class="fig-caption">Thin film flow on inclined plane</div></div>
+      <div class="figure-item fig-pending"><div class="fig-id">Fig. 3</div><div class="fig-caption">PINN architecture diagram</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 4</div><div class="fig-caption">Training loss history</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 5</div><div class="fig-caption">Raissi DNS benchmark solution</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 6</div><div class="fig-caption">PINN predicted solution field</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 7</div><div class="fig-caption">Absolute error map</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 8</div><div class="fig-caption">Temporal snapshots comparison</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 9</div><div class="fig-caption">L2 error evolution over time</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 10</div><div class="fig-caption">Dispersion relation</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 11</div><div class="fig-caption">Energy spectrum comparison</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 12</div><div class="fig-caption">Wave speed (Liu &amp; Gollub 1993)</div></div>
+      <div class="figure-item fig-complete"><div class="fig-id">Fig. 13</div><div class="fig-caption">Dimensionless speed (Chang 1994)</div></div>
+      <div class="figure-item fig-pending"><div class="fig-id">Fig. 14</div><div class="fig-caption">Inclination angle parameter study</div></div>
+      <div class="figure-item fig-pending"><div class="fig-id">Fig. 15</div><div class="fig-caption">Reynolds number parameter study</div></div>
+      <div class="figure-item fig-pending"><div class="fig-id">Fig. 16</div><div class="fig-caption">Data center thermal management map</div></div>
+    </div>
+  </div>
+
+  <!-- Code Stats -->
+  <div class="card">
+    <h2>Code</h2>
+    <div class="code-stats">
+      <div class="code-stat"><div class="val">820</div><div class="lbl">Lines of Code</div></div>
+      <div class="code-stat"><div class="val" style="color:var(--green)">✓</div><div class="lbl">Training Done</div></div>
+      <div class="code-stat"><div class="val" style="color:var(--yellow)">8.3e-4</div><div class="lbl">Final Loss</div></div>
+      <div class="code-stat"><div class="val">4.85h</div><div class="lbl">Train Time (Adam+LBFGS)</div></div>
+    </div>
+    <div style="margin-top:12px; background:#1e2235; border-radius:6px; padding:10px; font-size:10px; color:var(--muted);">
+      <div>ETDRK4 spectral solver: <span style="color:var(--green)">0.11s</span></div>
+      <div>Adam (15k epochs): <span style="color:var(--yellow)">~3h</span></div>
+      <div>L-BFGS (1k iter): <span style="color:var(--yellow)">~1.9h</span></div>
+      <div>L2 vs Raissi DNS: <span style="color:var(--yellow)">0.829 (chaotic)</span></div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="card">
+    <h2>Work Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item done">
+        <div class="tl-title">PINN Code Complete</div>
+        <div class="tl-time">ks_pinn_benchmark.py · 820 lines</div>
+      </div>
+      <div class="timeline-item done">
+        <div class="tl-title">Training Run Complete</div>
+        <div class="tl-time">Loss=8.33e-4 · 4.85h total</div>
+      </div>
+      <div class="timeline-item done">
+        <div class="tl-title">Benchmark Validation</div>
+        <div class="tl-time">9 figures generated</div>
+      </div>
+      <div class="timeline-item active">
+        <div class="tl-title">Dashboard + Paper Start</div>
+        <div class="tl-time">In progress...</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-title">All Figures Complete</div>
+        <div class="tl-time">16 figures target</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-title">Full Paper Draft</div>
+        <div class="tl-time">14-16 pages target</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-title">References (≥50 ENW)</div>
+        <div class="tl-time">EndNote import ready</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-title">Word Document</div>
+        <div class="tl-time">python-docx + verify</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- References -->
+  <div class="card">
+    <h2>References</h2>
+    <div style="margin-bottom:12px;">
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+        <span>PINN Methods</span><span id="ref-pinn" style="color:var(--muted)">0 / 25</span>
+      </div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner bar-blue" style="width:0%" id="pbar-pinn"></div></div>
+      <div style="display:flex; justify-content:space-between; margin:10px 0 6px;">
+        <span>KS / Thin Film / Fluid</span><span id="ref-ks" style="color:var(--muted)">0 / 15</span>
+      </div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner bar-yellow" style="width:0%" id="pbar-ks"></div></div>
+      <div style="display:flex; justify-content:space-between; margin:10px 0 6px;">
+        <span>Data Center Cooling</span><span id="ref-dc" style="color:var(--muted)">0 / 10</span>
+      </div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner bar-green" style="width:0%" id="pbar-dc"></div></div>
+    </div>
+    <div style="text-align:center; padding:10px; background:#1e2235; border-radius:6px;">
+      <div style="font-size:32px; font-weight:800; color:var(--muted)" id="total-refs">0</div>
+      <div style="font-size:10px; color:var(--muted)">of 50 target · ENW format</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div><span class="live-dot"></span>Live · Auto-refreshes every 15 seconds · Last updated: <span id="last-update">--</span></div>
+  <div>Yuqi Shi · China Mobile CMDI · IJHMT Submission</div>
+</div>
+
+<script>
+  // Update current time
+  function updateTime() {
+    const now = new Date();
+    document.getElementById('current-time').textContent = now.toLocaleString('en-US', {
+      year: 'numeric', month: 'short', day: 'numeric',
+      hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+    document.getElementById('last-update').textContent = now.toLocaleTimeString();
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // Load progress from JSON
+  async function loadProgress() {
+    try {
+      const resp = await fetch('./progress.json?t=' + Date.now());
+      const data = await resp.json();
+
+      // Overall progress
+      document.getElementById('overall-pct').textContent = data.overall_progress + '%';
+      document.getElementById('overall-bar').style.width = data.overall_progress + '%';
+
+      // References
+      document.getElementById('total-refs').textContent = data.references.total;
+      document.getElementById('ref-count').textContent = data.references.total + ' / ' + data.references.target;
+      if (data.references.total > 0) {
+        document.getElementById('total-refs').style.color = 'var(--accent)';
+      }
+
+      // Section list
+      const sectionsList = document.getElementById('sections-list');
+      if (data.sections) {
+        const rows = sectionsList.querySelectorAll('.section-row');
+        data.sections.forEach((sec, i) => {
+          if (rows[i]) {
+            const pct = sec.target_words > 0 ? Math.round(sec.words / sec.target_words * 100) : 0;
+            const bar = rows[i].querySelector('.progress-bar-inner');
+            if (bar) bar.style.width = pct + '%';
+            const wordSpan = rows[i].querySelector('.section-words');
+            if (wordSpan) wordSpan.textContent = sec.words + ' / ' + sec.target_words + ' w';
+            const badge = rows[i].querySelector('.status-badge');
+            if (badge) {
+              badge.className = 'status-badge';
+              if (sec.status === 'complete') {
+                badge.classList.add('badge-complete');
+                badge.textContent = 'DONE';
+              } else if (sec.status === 'in-progress') {
+                badge.classList.add('badge-in-progress');
+                badge.textContent = 'WRITING';
+              } else {
+                badge.classList.add('badge-pending');
+                badge.textContent = 'PENDING';
+              }
+            }
+          }
+        });
+      }
+    } catch(e) { console.log('Progress file not yet updated:', e.message); }
+  }
+  loadProgress();
+  setInterval(loadProgress, 15000);
+</script>
+</body>
+</html>

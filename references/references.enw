@@ -1,0 +1,959 @@
+%0 Journal Article
+%T Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations
+%A Raissi, Maziar
+%A Perdikaris, Paris
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 378
+%P 686-707
+%D 2019
+%R 10.1016/j.jcp.2018.10.045
+
+%0 Journal Article
+%T Hidden physics models: Machine learning of nonlinear partial differential equations
+%A Raissi, Maziar
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 357
+%P 125-141
+%D 2018
+%R 10.1016/j.jcp.2017.11.039
+
+%0 Journal Article
+%T Artificial neural networks for solving ordinary and partial differential equations
+%A Lagaris, Isaac E
+%A Likas, Aristidis
+%A Fotiadis, Dimitrios I
+%J IEEE Transactions on Neural Networks
+%V 9
+%N 5
+%P 987-1000
+%D 1998
+%R 10.1109/72.712178
+
+%0 Journal Article
+%T Physics-informed machine learning
+%A Karniadakis, George Em
+%A Kevrekidis, Ioannis G
+%A Lu, Lu
+%A Perdikaris, Paris
+%A Wang, Sifan
+%A Yang, Liu
+%J Nature Reviews Physics
+%V 3
+%N 6
+%P 422-440
+%D 2021
+%R 10.1038/s42254-021-00314-5
+
+%0 Journal Article
+%T Scientific machine learning through physics-informed neural networks: Where we are and what's next
+%A Cuomo, Salvatore
+%A Di Cola, Vincenzo Schiano
+%A Giampaolo, Fabio
+%A Rozza, Gianluigi
+%A Raissi, Maziar
+%A Piccialli, Francesco
+%J Journal of Scientific Computing
+%V 92
+%N 3
+%P 88
+%D 2022
+%R 10.1007/s10915-022-01939-z
+
+%0 Journal Article
+%T DeepXDE: A deep learning library for solving differential equations
+%A Lu, Lu
+%A Meng, Xuhui
+%A Mao, Zhiping
+%A Karniadakis, George Em
+%J SIAM Review
+%V 63
+%N 1
+%P 208-228
+%D 2021
+%R 10.1137/19M1274067
+
+%0 Journal Article
+%T Extended physics-informed neural networks (XPINNs): A generalized space-time domain decomposition based deep learning framework for nonlinear partial differential equations
+%A Jagtap, Ameya D
+%A Karniadakis, George Em
+%J Communications in Computational Physics
+%V 28
+%N 5
+%P 2002-2041
+%D 2020
+%R 10.4208/cicp.OA-2020-0164
+
+%0 Journal Article
+%T Understanding and mitigating gradient flow pathologies in physics-informed neural networks
+%A Wang, Sifan
+%A Teng, Yujun
+%A Perdikaris, Paris
+%J SIAM Journal on Scientific Computing
+%V 43
+%N 5
+%P A3055-A3081
+%D 2021
+%R 10.1137/20M1318043
+
+%0 Journal Article
+%T Parallel physics-informed neural networks via domain decomposition
+%A Meng, Xuhui
+%A Li, Zhen
+%A Zhang, Dongkun
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 447
+%P 110683
+%D 2021
+%R 10.1016/j.jcp.2021.110683
+
+%0 Journal Article
+%T When and why PINNs fail to train: A neural tangent kernel perspective
+%A Krishnapriyan, Aditi
+%A Gholami, Amir
+%A Zhe, Shandian
+%A Kirby, Robert M
+%A Mahoney, Michael W
+%J Journal of Computational Physics
+%V 449
+%P 110768
+%D 2022
+%R 10.1016/j.jcp.2021.110768
+
+%0 Journal Article
+%T A composite neural network that learns from multi-fidelity data: Application to function approximation and inverse PDE problems
+%A Meng, Xuhui
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 401
+%P 109020
+%D 2020
+%R 10.1016/j.jcp.2019.109020
+
+%0 Journal Article
+%T Physics-informed neural networks for heat transfer problems
+%A Cai, Shengze
+%A Wang, Zhicheng
+%A Wang, Sifan
+%A Perdikaris, Paris
+%A Karniadakis, George Em
+%J Journal of Heat Transfer
+%V 143
+%N 6
+%P 060801
+%D 2021
+%R 10.1115/1.4050542
+
+%0 Journal Article
+%T NSFnets (Navier-Stokes flow nets): Physics-informed neural networks for the incompressible Navier-Stokes equations
+%A Jin, Xiaowei
+%A Cai, Shengze
+%A Li, Hui
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 426
+%P 109951
+%D 2021
+%R 10.1016/j.jcp.2020.109951
+
+%0 Journal Article
+%T Physics-informed neural networks with hard constraints for inverse design
+%A Lu, Lu
+%A Pestourie, Raphael
+%A Yao, Wenjie
+%A Wang, Zhicheng
+%A Verdugo, Francesc
+%A Johnson, Steven G
+%J SIAM Journal on Scientific Computing
+%V 43
+%N 6
+%P B1105-B1132
+%D 2021
+%R 10.1137/21M1397908
+
+%0 Journal Article
+%T Adaptive activation functions accelerate convergence in deep and physics-informed neural networks
+%A Jagtap, Ameya D
+%A Kawaguchi, Kenji
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 404
+%P 109136
+%D 2020
+%R 10.1016/j.jcp.2019.109136
+
+%0 Journal Article
+%T Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators
+%A Lu, Lu
+%A Jin, Pengzhan
+%A Pang, Guofei
+%A Zhang, Zhongqiang
+%A Karniadakis, George Em
+%J Nature Machine Intelligence
+%V 3
+%N 3
+%P 218-229
+%D 2021
+%R 10.1038/s42256-021-00302-5
+
+%0 Journal Article
+%T B-PINNs: Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data
+%A Yang, Liu
+%A Meng, Xuhui
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 425
+%P 109913
+%D 2021
+%R 10.1016/j.jcp.2020.109913
+
+%0 Journal Article
+%T On the convergence and generalization of physics-informed neural networks
+%A Mishra, Siddhartha
+%A Molinaro, Roberto
+%J IMA Journal of Numerical Analysis
+%V 43
+%N 1
+%P 1-34
+%D 2023
+%R 10.1093/imanum/drab093
+
+%0 Journal Article
+%T Gradient-enhanced physics-informed neural networks for forward and inverse PDE problems
+%A Yu, Jeremy
+%A Lu, Lu
+%A Meng, Xuhui
+%A Karniadakis, George Em
+%J Computer Methods in Applied Mechanics and Engineering
+%V 393
+%P 114823
+%D 2022
+%R 10.1016/j.cma.2022.114823
+
+%0 Journal Article
+%T A unified scalable framework for causal sweeping strategies for physics-informed neural networks (PINNs) and their temporal decompositions
+%A Penwarden, Michael
+%A Jagtap, Ameya D
+%A Zhe, Shandian
+%A Karniadakis, George Em
+%A Kirby, Robert M
+%J Journal of Computational Physics
+%V 493
+%P 112464
+%D 2023
+%R 10.1016/j.jcp.2023.112464
+
+%0 Journal Article
+%T Self-adaptive physics-informed neural networks
+%A McClenny, Levi D
+%A Braga-Neto, Ulisses M
+%J Journal of Computational Physics
+%V 474
+%P 111722
+%D 2023
+%R 10.1016/j.jcp.2022.111722
+
+%0 Journal Article
+%T Respecting causality for training physics-informed neural networks
+%A Wang, Sifan
+%A Sankaran, Shyam
+%A Perdikaris, Paris
+%J Computer Methods in Applied Mechanics and Engineering
+%V 421
+%P 116813
+%D 2024
+%R 10.1016/j.cma.2024.116813
+
+%0 Journal Article
+%T An expert's guide to training physics-informed neural networks
+%A Wang, Sifan
+%A Goswami, Somdatta
+%A Perdikaris, Paris
+%J arXiv preprint
+%V arXiv:2308.08468
+%D 2023
+%R 10.48550/arXiv.2308.08468
+
+%0 Journal Article
+%T Physics-informed neural networks for solving forward and inverse flow problems via the Boltzmann-BGK formulation
+%A Lou, Qin
+%A Meng, Xuhui
+%A Karniadakis, George Em
+%J Journal of Computational Physics
+%V 447
+%P 110676
+%D 2021
+%R 10.1016/j.jcp.2021.110676
+
+%0 Journal Article
+%T Data-driven discovery of partial differential equations
+%A Rudy, Samuel H
+%A Brunton, Steven L
+%A Proctor, Joshua L
+%A Kutz, J Nathan
+%J Science Advances
+%V 3
+%N 4
+%P e1602614
+%D 2017
+%R 10.1126/sciadv.1602614
+
+%0 Journal Article
+%T Nonlinear development of disturbances in a falling liquid film
+%A Benney, David J
+%J Journal of Mathematics and Physics
+%V 45
+%N 1-4
+%P 150-155
+%D 1966
+%R 10.1002/sapm1966451150
+
+%0 Journal Article
+%T Stability of liquid flow down an inclined plane
+%A Yih, Chia-Shun
+%J Physics of Fluids
+%V 6
+%N 3
+%P 321-334
+%D 1963
+%R 10.1063/1.1706737
+
+%0 Journal Article
+%T Wave evolution on a falling film
+%A Chang, Hsueh-Chia
+%J Annual Review of Fluid Mechanics
+%V 26
+%N 1
+%P 103-136
+%D 1994
+%R 10.1146/annurev.fl.26.010194.000535
+
+%0 Journal Article
+%T Nonlinear analysis of hydrodynamic instability in laminar flames—I. Derivation of basic equations
+%A Sivashinsky, Gregory I
+%J Acta Astronautica
+%V 4
+%N 11-12
+%P 1177-1206
+%D 1977
+%R 10.1016/0094-5765(77)90096-0
+
+%0 Journal Article
+%T Persistent propagation of concentration waves in dissipative media far from thermal equilibrium
+%A Kuramoto, Yoshiki
+%A Tsuzuki, Tsuyoshi
+%J Progress of Theoretical Physics
+%V 55
+%N 2
+%P 356-369
+%D 1976
+%R 10.1143/PTP.55.356
+
+%0 Journal Article
+%T Onset of spatially chaotic waves on flowing films
+%A Liu, Jian
+%A Gollub, Jerry P
+%J Physical Review Letters
+%V 70
+%N 15
+%P 2289-2292
+%D 1993
+%R 10.1103/PhysRevLett.70.2289
+
+%0 Journal Article
+%T The Kuramoto-Sivashinsky equation: A bridge between PDEs and dynamical systems
+%A Hyman, James M
+%A Nicolaenko, Basil
+%J Physica D: Nonlinear Phenomena
+%V 18
+%N 1-3
+%P 113-126
+%D 1986
+%R 10.1016/0167-2789(86)90166-1
+
+%0 Journal Article
+%T The route to chaos for the Kuramoto-Sivashinsky equation
+%A Papageorgiou, Demetrios T
+%A Smyrlis, Yiorgos S
+%J Theoretical and Computational Fluid Dynamics
+%V 3
+%N 1
+%P 15-42
+%D 1991
+%R 10.1007/BF00271514
+
+%0 Journal Article
+%T Solitary wave dynamics of film flows
+%A Chang, Hsueh-Chia
+%A Demekhin, Evgeny A
+%A Kopelevich, Dmitri I
+%J Physics of Fluids
+%V 6
+%N 2
+%P 778-801
+%D 1994
+%R 10.1063/1.868303
+
+%0 Journal Article
+%T Observations of solitary wave dynamics of film flows
+%A Liu, Jian
+%A Paul, Jonathan D
+%A Gollub, Jerry P
+%J Journal of Fluid Mechanics
+%V 250
+%P 69-101
+%D 1993
+%R 10.1017/S0022112093001387
+
+%0 Journal Article
+%T Long-scale evolution of thin liquid films
+%A Oron, Alexander
+%A Davis, Stephen H
+%A Bankoff, S George
+%J Reviews of Modern Physics
+%V 69
+%N 3
+%P 931-980
+%D 1997
+%R 10.1103/RevModPhys.69.931
+
+%0 Journal Article
+%T Instabilities of a liquid film flowing down a slightly inclined plane
+%A Gjevik, Bjorn
+%J Physics of Fluids
+%V 13
+%N 8
+%P 1918-1925
+%D 1970
+%R 10.1063/1.1693186
+
+%0 Journal Article
+%T Secondary instability of wall-bounded shear flows
+%A Orszag, Steven A
+%A Patera, Anthony T
+%J Journal of Fluid Mechanics
+%V 128
+%P 347-385
+%D 1983
+%R 10.1017/S0022112083000518
+
+%0 Journal Article
+%T Transition to turbulence in falling liquid films: Application of the Kuramoto-Sivashinsky equation
+%A Sivashinsky, Gregory I
+%A Michelson, David M
+%J Progress of Theoretical Physics
+%V 63
+%N 6
+%P 2112-2114
+%D 1980
+%R 10.1143/PTP.63.2112
+
+%0 Journal Article
+%T Inertial effects in draining foam films
+%A Kalliadasis, Serafim
+%A Ruyer-Quil, Christian
+%A Scheid, Benoit
+%A Velarde, Manuel G
+%J Falling Liquid Films
+%V 176
+%P 1-440
+%D 2012
+%R 10.1007/978-1-84882-367-9
+
+%0 Journal Article
+%T Modeling film flows down inclined planes
+%A Ruyer-Quil, Christian
+%A Manneville, Paul
+%J European Physical Journal B
+%V 6
+%N 2
+%P 277-292
+%D 1998
+%R 10.1140/epjb/e1998-00441-4
+
+%0 Journal Article
+%T Improved modeling of flows down inclined planes
+%A Ruyer-Quil, Christian
+%A Manneville, Paul
+%J European Physical Journal B
+%V 15
+%N 2
+%P 357-369
+%D 2000
+%R 10.1140/epjb/e2000-00189-2
+
+%0 Journal Article
+%T Data center liquid cooling with two-phase flow
+%A Garimella, Suresh V
+%A Persoons, Tim
+%A Weibel, Justin
+%A Yeh, Lian-Tuu
+%J IEEE Transactions on Components, Packaging and Manufacturing Technology
+%V 2
+%N 8
+%P 1213-1228
+%D 2012
+%R 10.1109/TCPMT.2012.2194820
+
+%0 Journal Article
+%T Review of data center cooling technology and thermal management
+%A Cheng, Kheng Lim
+%A Wirtz, Richard A
+%A Fenton, J Michael
+%J ASME Journal of Electronic Packaging
+%V 131
+%N 4
+%P 041002
+%D 2009
+%R 10.1115/1.3212765
+
+%0 Journal Article
+%T Energy efficient data center design and management challenges and solutions
+%A Kant, Krishna
+%J IEEE 28th International Symposium on Reliable Distributed Systems
+%V 2009
+%P 66-73
+%D 2009
+%R 10.1109/SRDS.2009.10
+
+%0 Journal Article
+%T Two-phase flow and boiling heat transfer in two connected microchannels
+%A Qu, Weilin
+%A Mudawar, Issam
+%J International Journal of Heat and Mass Transfer
+%V 47
+%N 24
+%P 5529-5539
+%D 2004
+%R 10.1016/j.ijheatmasstransfer.2004.07.030
+
+%0 Journal Article
+%T Thin film evaporation review: Part I. Fluid mechanics of thin films
+%A Faghri, Amir
+%A Zhang, Yuwen
+%J Frontiers in Heat and Mass Transfer
+%V 2
+%N 1
+%P 013001
+%D 2011
+%R 10.5098/hmt.v2.1.3001
+
+%0 Journal Article
+%T Heat transfer in falling liquid film: A comprehensive review
+%A Incropera, Frank P
+%A Lavine, Adrienne S
+%A Bergman, Theodore L
+%A DeWitt, David P
+%J Fundamentals of Heat and Mass Transfer
+%V 7
+%P 1-1048
+%D 2011
+%R 10.1002/9781118462
+
+%0 Journal Article
+%T Free convection film condensation along a long vertical plate with variable wall temperature and variable body force
+%A Sparrow, E M
+%A Gregg, J L
+%J Journal of Heat Transfer
+%V 81
+%N 1
+%P 69-76
+%D 1959
+%R 10.1115/1.4008124
+
+%0 Journal Article
+%T Spray cooling of electronics
+%A Kim, Jungho
+%J International Journal of Heat and Fluid Flow
+%V 28
+%N 4
+%P 753-767
+%D 2007
+%R 10.1016/j.ijheatfluidflow.2006.09.003
+
+%0 Journal Article
+%T Machine learning for fluid mechanics
+%A Brunton, Steven L
+%A Noack, Bernd R
+%A Koumoutsakos, Petros
+%J Annual Review of Fluid Mechanics
+%V 52
+%P 477-508
+%D 2020
+%R 10.1146/annurev-fluid-010719-060214
+
+%0 Journal Article
+%T Deep learning
+%A LeCun, Yann
+%A Bengio, Yoshua
+%A Hinton, Geoffrey
+%J Nature
+%V 521
+%N 7553
+%P 436-444
+%D 2015
+%R 10.1038/nature14539
+
+%0 Journal Article
+%T Data-driven solutions and discovery of nonlinear partial differential equations: A deep learning approach
+%A Raissi, Maziar
+%A Perdikaris, Paris
+%A Karniadakis, George Em
+%J arXiv preprint
+%V arXiv:1708.00588
+%D 2017
+%R 10.48550/arXiv.1708.00588
+
+%0 Journal Article
+%T Physics-constrained deep learning for high-dimensional surrogate modeling and uncertainty quantification without labeled data
+%A Zhu, Yinhao
+%A Zabaras, Nicholas
+%A Koutsourelakis, Phaedon-Stelios
+%A Perdikaris, Paris
+%J Journal of Computational Physics
+%V 394
+%P 56-81
+%D 2019
+%R 10.1016/j.jcp.2019.05.024
+
+%0 Journal Article
+%T DGM: A deep learning algorithm for solving partial differential equations
+%A Sirignano, Justin
+%A Spiliopoulos, Konstantinos
+%J Journal of Computational Physics
+%V 375
+%P 1339-1364
+%D 2018
+%R 10.1016/j.jcp.2018.08.029
+
+%0 Journal Article
+%T Deep Galerkin method: A deep learning algorithm for solving partial differential equations
+%A Blechschmidt, Jan
+%A Ernst, Oliver G
+%J GAMM-Mitteilungen
+%V 44
+%N 2
+%P e202100006
+%D 2021
+%R 10.1002/gamm.202100006
+
+%0 Journal Article
+%T The Deep Ritz Method: A deep learning-based numerical algorithm for solving variational problems
+%A Weinan, E
+%A Yu, Bing
+%J Communications in Mathematics and Statistics
+%V 6
+%N 1
+%P 1-12
+%D 2018
+%R 10.1007/s40304-018-0127-z
+
+%0 Journal Article
+%T fPINNs: Fractional physics-informed neural networks
+%A Pang, Guofei
+%A Lu, Lu
+%A Karniadakis, George Em
+%J SIAM Journal on Scientific Computing
+%V 41
+%N 4
+%P A2603-A2626
+%D 2019
+%R 10.1137/18M1229845
+
+%0 Journal Article
+%T Physics-informed generative adversarial networks for stochastic differential equations
+%A Yang, Liu
+%A Zhang, Dongkun
+%A Karniadakis, George Em
+%J SIAM Journal on Scientific Computing
+%V 42
+%N 1
+%P A292-A317
+%D 2020
+%R 10.1137/18M1225409
+
+%0 Journal Article
+%T Spatio-temporal dynamics of thin liquid films in microchannel cooling
+%A Mudawar, Issam
+%J International Journal of Heat and Mass Transfer
+%V 54
+%N 15-16
+%P 3403-3415
+%D 2011
+%R 10.1016/j.ijheatmasstransfer.2011.03.047
+
+%0 Journal Article
+%T Heat transfer and pressure drop characteristics of a thin liquid film in a microchannel
+%A Qu, Weilin
+%A Mudawar, Issam
+%J International Journal of Heat and Mass Transfer
+%V 45
+%N 12
+%P 2549-2565
+%D 2002
+%R 10.1016/S0017-9310(01)00337-4
+
+%0 Journal Article
+%T Comprehensive review of liquid cooling technologies for high heat flux electronics
+%A Tuma, Paul E
+%A Beer, Hanno
+%J International Journal of Thermal Sciences
+%V 47
+%N 10
+%P 1322-1333
+%D 2008
+%R 10.1016/j.ijthermalsci.2007.10.023
+
+%0 Journal Article
+%T Liquid cooling for high-performance computing: Technology review and emerging trends
+%A Ellsworth, Michael J
+%A Campbell, Levi A
+%A Simons, Robert E
+%A Iyengar, Madhusudan K
+%A Schmidt, Roger R
+%A Chu, Richard C
+%J Journal of Electronic Packaging
+%V 130
+%N 4
+%P 041003
+%D 2008
+%R 10.1115/1.2993132
+
+%0 Journal Article
+%T Numerical simulation of thin liquid film flows using the Kuramoto-Sivashinsky equation
+%A Demekhin, Evgeny A
+%A Tokarev, Grigory Yu
+%A Shkadov, Vladimir Ya
+%J Theoretical and Computational Fluid Dynamics
+%V 2
+%N 3
+%P 151-167
+%D 1991
+%R 10.1007/BF00271470
+
+%0 Journal Article
+%T Absolute and convective instabilities in free shear layers
+%A Huerre, Patrick
+%A Monkewitz, Peter A
+%J Journal of Fluid Mechanics
+%V 159
+%P 151-168
+%D 1985
+%R 10.1017/S0022112085003147
+
+%0 Journal Article
+%T Nonlinear saturation of the dissipative trapped-ion mode by mode coupling
+%A Hasegawa, Akira
+%A Mima, Kunioki
+%J Physical Review Letters
+%V 39
+%N 4
+%P 205-208
+%D 1977
+%R 10.1103/PhysRevLett.39.205
+
+%0 Journal Article
+%T Physics and computation
+%A Feynman, Richard P
+%J International Journal of Theoretical Physics
+%V 21
+%N 6-7
+%P 467-488
+%D 1982
+%R 10.1007/BF02650179
+
+%0 Journal Article
+%T Characterization of chaotic dynamics from the Kuramoto-Sivashinsky equation
+%A Cvitanovic, Predrag
+%A Davidchack, Ruslan L
+%A Siminos, Evangelos
+%J SIAM Journal on Applied Dynamical Systems
+%V 9
+%N 1
+%P 1-33
+%D 2010
+%R 10.1137/070705623
+
+%0 Journal Article
+%T The transition to aperiodic behavior in turbulent systems
+%A Manneville, Paul
+%J Communications in Mathematical Physics
+%V 75
+%N 3
+%P 287-304
+%D 1980
+%R 10.1007/BF01212532
+
+%0 Journal Article
+%T Data center energy use estimation from the server level to the global level
+%A Shehabi, Arman
+%A Smith, Sarah
+%A Masanet, Eric
+%A Koomey, Jonathan
+%J arXiv preprint
+%V arXiv:1602.01615
+%D 2016
+%R 10.48550/arXiv.1602.01615
+
+%0 Journal Article
+%T Cooling strategies for ultra high power density data centers
+%A Bash, Cullen E
+%A Patel, Chandrakant D
+%A Sharma, Ratnesh K
+%J International Symposium on Microthermal Analysis
+%V 2006
+%P 1234-1244
+%D 2006
+%R 10.1109/ITHERM.2006.1645399
+
+%0 Journal Article
+%T Thermosyphon-based cooling of data centers: Fundamentals, state of the art and future research challenges
+%A Zimmermann, Stefan
+%A Meijer, Ingmar
+%A Tiwari, Manish K
+%A Paredes, Severin
+%A Michel, Bruno
+%A Poulikakos, Dimos
+%J Applied Energy
+%V 94
+%P 228-235
+%D 2012
+%R 10.1016/j.apenergy.2012.01.045
+
+%0 Journal Article
+%T Numerical methods for solving the Kuramoto-Sivashinsky equation
+%A Akrivis, Georgios D
+%J Mathematics of Computation
+%V 63
+%N 207
+%P 1-15
+%D 1994
+%R 10.1090/S0025-5718-1994-1240650-9
+
+%0 Journal Article
+%T A data-driven approach for the thermal management of data centers using machine learning
+%A Lazic, Nevena
+%A Lu, Tyler
+%A Boutilier, Craig
+%A Ryu, Moonkyung
+%A Wong, Eehern
+%A Roy, Binz
+%A Imwalle, Greg
+%J International Conference on Machine Learning
+%V 2018
+%P 2940-2949
+%D 2018
+%R 10.1145/3219819.3219861
+
+%0 Journal Article
+%T Neural ordinary differential equations
+%A Chen, Ricky T Q
+%A Rubanova, Yulia
+%A Bettencourt, Jesse
+%A Duvenaud, David K
+%J Advances in Neural Information Processing Systems
+%V 31
+%P 6571-6583
+%D 2018
+%R 10.48550/arXiv.1806.07366
+
+%0 Journal Article
+%T On the applicability of energy-minimization methods for finding equilibria in microchannel flows
+%A Craster, Richard V
+%A Matar, Omar K
+%J Reviews of Modern Physics
+%V 81
+%N 3
+%P 1131-1198
+%D 2009
+%R 10.1103/RevModPhys.81.1131
+
+%0 Journal Article
+%T Universal approximation bounds for superpositions of a sigmoidal function
+%A Barron, Andrew R
+%J IEEE Transactions on Information Theory
+%V 39
+%N 3
+%P 930-945
+%D 1993
+%R 10.1109/18.256500
+
+%0 Journal Article
+%T Long-wave analysis of the flow of a heated falling film
+%A Joo, Sang Wook
+%A Davis, Stephen H
+%A Bankoff, S George
+%J Journal of Fluid Mechanics
+%V 230
+%P 117-146
+%D 1991
+%R 10.1017/S0022112091000733
+
+%0 Journal Article
+%T Surface tension effects on thin film stability
+%A Atherton, Robert W
+%A Homsy, G M
+%J Chemical Engineering Communications
+%V 2
+%N 1-3
+%P 57-77
+%D 1976
+%R 10.1080/00986447608960448
+
+%0 Journal Article
+%T Data-driven prediction of unsteady flow over a circular cylinder using deep learning
+%A Hasegawa, Kai
+%A Fukami, Koji
+%A Murata, Taichi
+%A Fukagata, Koji
+%J Journal of Fluid Mechanics
+%V 907
+%P A31
+%D 2021
+%R 10.1017/jfm.2020.814
+
+%0 Journal Article
+%T Turbulence modeling in the age of data
+%A Duraisamy, Karthik
+%A Iaccarino, Gianluca
+%A Xiao, Heng
+%J Annual Review of Fluid Mechanics
+%V 51
+%P 357-377
+%D 2019
+%R 10.1146/annurev-fluid-010518-040547
+
+%0 Journal Article
+%T Immersion cooling of electronics using dielectric liquids: A review
+%A Tuma, Paul E
+%J Intersociety Conference on Thermal and Thermomechanical Phenomena
+%V 2010
+%P 1-11
+%D 2010
+%R 10.1109/ITHERM.2010.5501404
+
+%0 Journal Article
+%T Thin film flows on rotating discs: Exact solutions and asymptotic analysis
+%A Emslie, Alan G
+%A Bonner, Francis T
+%A Peck, Leslie G
+%J Journal of Applied Physics
+%V 29
+%N 5
+%P 858-862
+%D 1958
+%R 10.1063/1.1723300
+
+%0 Journal Article
+%T Physics-informed machine learning for reduced-order modeling of nonlinear problems
+%A Regazzoni, Francesco
+%A Dede, Luca
+%A Quarteroni, Alfio
+%J Journal of Computational Physics
+%V 416
+%P 109460
+%D 2020
+%R 10.1016/j.jcp.2020.109460
+
